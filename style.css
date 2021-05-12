@@ -1,29 +1,41 @@
-.library {
-    height: 500px;
-    width: 100%;
-    border: 2px;
-    margin: 0px;
-    
-}
-
-#shelves {
-    height: 300px;
-    width: 80%;
-    background-color: white;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-
-#shelf {
-    height: 20px;
-    width: 100%;
-    background-color: rgb(68, 2, 2);
-    border-radius: 5px;
-    margin-top: 100px;
-    margin-bottom: 100px;
+.title {
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .btns {
     height: 200px;
-    background: grey;
+
 }
+
+#add {
+    display: block;
+    margin-left:45%;
+    height:100px;
+    width:170px;
+    font-size:30px;
+    background-color: aqua;
+    border:1px solid black;
+    border-radius: 3em;
+}
+
+.library {
+    height: 600px;
+    width: 100%;
+    border: 2px;
+    
+}
+
+
+.card {
+    display:inline-block;
+    margin:10px;
+    height: 150px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 3px;
+    text-align: center;
+    font-size:24px;
+}
+
