@@ -2,12 +2,58 @@ let myLibrary =[];
 
 const library = document.querySelector(".library");
 const add = document.querySelector("#add");
+const bookform = document.querySelector(".book-form");
+const submit = document.querySelector("#submit");
+const reset=document.querySelector("#reset");
 
-
-
-add.addEventListener("click",createBookForm);
+add.addEventListener("click",()=>{
     
+    bookform.classList.add("book-form-popup");
+    bookform.classList.remove("book-form");
 
+});
+
+submit.addEventListener("click",()=>{
+
+    const title = document.querySelector("#title");
+    const author = document.querySelector("#author");
+    const pages = document.querySelector("#pages");
+    let read = document.querySelector("#read");
+
+    let book = Object.create(Book);
+
+    book.title=title.value;
+    book.author=author.value;
+    book.pages=Number.parseInt(pages.value);
+
+    if (!title.value || !author.value|| !pages.value) {
+        alert("Please enter book information");
+        return;
+    }
+    
+    if (read.value == "yes") {
+
+        book.isRead==true;
+
+    }
+    else {
+
+        book.isRead==false;
+    }
+
+    myLibrary.push(book);
+    createBookCard(book);
+    
+    bookform.classList.add("book-form");
+    bookform.classList.remove("book-form-popup");
+
+    
+})
+    
+reset.addEventListener("click",()=>{
+
+
+})
 
 function Book(title,author,pages,isRead) {      //Book Object Constructor
 
@@ -17,81 +63,6 @@ function Book(title,author,pages,isRead) {      //Book Object Constructor
     this.isRead=isRead;
 
 };
-
-
-function createBookForm() {
-
-    const formdiv = document.createElement("div");
-    const title = document.createElement("p");
-    const titleinput = document.createElement("input");
-    const author = document.createElement("p");
-    const authorinput = document.createElement("input");
-    const pages = document.createElement("p");
-    const pagesinput = document.createElement("input");
-    const read = document.createElement("p");
-    const readinput = document.createElement("input");
-    const submit = document.createElement("input");
-
-    title.textContent="Title:";
-    author.textContent="Author:";
-    pages.textContent="Length:";
-    read.textContent="I have finished this book"
-    submit.textContent="Add Book"
-
-    titleinput.type="text";
-    authorinput.type="text";
-    pagesinput.type="text";
-    readinput.type="checkbox";
-    submit.type="submit";
-
-    formdiv.classList.add("book-form");
-
-    library.appendChild(formdiv);
-    formdiv.appendChild(title);
-    formdiv.appendChild(titleinput);
-    formdiv.appendChild(author);
-    formdiv.appendChild(authorinput);
-    formdiv.appendChild(pages);
-    formdiv.appendChild(pagesinput);
-    formdiv.appendChild(read);
-    formdiv.appendChild(readinput);
-    formdiv.appendChild(submit);
-
-    submit.addEventListener("click", () =>{
-
-        let book = Object.create(Book);
-
-        book.title=titleinput.value;
-        book.author=authorinput.value;
-        book.pages=Number.parseInt(pagesinput.value);
-
-        if (readinput.value="on") {
-            book.isRead=true;
-        }
-        else {
-            book.isRead=false;
-        }
-        
-        myLibrary.push(book);
-        createBookCard(book);
-
-        library.removeChild(formdiv);
-
-        
-        
-        
-        
-    })
-}
-
-
-function displayLibrary(arr) {
-    for (let i=1; i<arr.length;i++) {
-
-        
-
-    }
-}
 
 
 
@@ -125,6 +96,11 @@ function createBookCard(book) {
     card.appendChild(pages);
     card.appendChild(isRead);
     card.appendChild(remove);
+
+    remove.addEventListener("click", ()=>{
+
+        library.removeChild(card);
+    })
 
 }
 

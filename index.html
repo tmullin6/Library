@@ -17,7 +17,29 @@
     </div>
 
     <div class="library">
-       
+
+        <div class="book-form">
+
+        <form action="javascript:void(0)">
+
+            <h1 id ="form-title">Add a new book to your library</h1><br>
+
+            <label for="title">Title:</label><br>
+            <input type="text" placeholder="Enter Book Title" name="title" id="title"><br>
+            <label for="author">Author:</label><br>
+            <input type="text" placeholder="Enter Author Name" name="author" id="author"><br>
+            <label for="length">Book Length (Enter only numbers)</label><br>
+            <input for="length" type="text" placeholder="Number of Pages" id="pages"><br>
+            <p>Have you finished this book yet?</p>
+            <input type="radio" id="read" name="read" value="yes">
+            <label for="yes">Yes</label>
+            <input type="radio" id="read" name="read" value="no">
+            <label for="no">No</label><br>
+            <button id="submit">Add Book</button>
+            <button id="reset">Reset Form</button>
+
+        </form>
+       </div>
 
 
     </div>

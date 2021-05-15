@@ -1,7 +1,7 @@
 .title {
     font-size: 70px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .btns {
@@ -12,36 +12,59 @@
 #add {
     display: block;
     margin-left:45%;
+    margin-top:200px;
     height:100px;
     width:170px;
     font-size:30px;
     background-color: aqua;
     border:1px solid black;
+    box-shadow: 2px 2px black;
     border-radius: 3em;
 }
 
 .book-form {
-    height: 300px;
+    display: none;
+}
+
+.book-form-popup {
+    position: absolute;
+    text-align: center;
+    box-shadow: 10px 11px rgba(0, 0, 255, .2);
+    height: 250px;
     width: 400px;
-    border: 2px solid black;
+    margin-left:350px;
+    border: 2px solid #FC7307;
     text-align: center;
     font-size:20px;
+    background: #347B98;
+}
 
+#form-title {
+    display:inline-block;
+    margin: 3px;
+    font-size: 20px;
+}
+label {
+    display:inline-block;
+    margin: 3px;
+    font-size: 18px;
 }
 
 .library {
-    height: 600px;
+    z-index: 1;
+    height: 300px;
     width: 100%;
-    border: 2px;
     
 }
 
 
 .card {
+
     display:inline-block;
+    z-index: 1;
     margin:10px;
-    height: 150px;
-    width: 100px;
+    height: 200px;
+    width: 125px;
     border: 2px solid black;
     border-radius: 3px;
     text-align: center;
