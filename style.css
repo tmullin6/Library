@@ -1,6 +1,12 @@
+html {
+    background: #121212;
+}
+
+
 .title {
     font-size: 70px;
     text-align: center;
+    color: white;
     margin-bottom: 20px;
 }
 
@@ -33,7 +39,7 @@
     height: 250px;
     width: 400px;
     margin-left:350px;
-    border: 2px solid #FC7307;
+    border-radius: 5px;
     text-align: center;
     font-size:20px;
     background: #347B98;
@@ -57,17 +63,37 @@ label {
     
 }
 
-
-.card {
+.card-read {
 
     display:inline-block;
     z-index: 1;
+    color:white;
     margin:10px;
-    height: 200px;
-    width: 125px;
+    height: fit-content;
+    max-height: 200px;
+    width: fit-content;
+    max-width: 200px;
     border: 2px solid black;
+    box-shadow: 2px 1px white;
     border-radius: 3px;
     text-align: center;
-    font-size:24px;
+    font-size:16px;
+    background:green;
+}
+.card-notread {
+    display:inline-block;
+    z-index: 1;
+    color:white;
+    margin:10px;
+    height: fit-content;
+    max-height: 200px;
+    width: fit-content;
+    max-width: 200px;
+    border: 2px solid black;
+    box-shadow: 2px 1px white;
+    border-radius: 3px;
+    text-align: center;
+    font-size:16px;
+    background:red;
 }
 
