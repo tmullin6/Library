@@ -22,6 +22,7 @@ add.addEventListener("click",()=>{
 and sets the values to the individual book properties. After creating the book object, the object
 is pushed to the Mylibrary array and the function createBookCard is called to make a book card 
 display on screen*/
+
 submit.addEventListener("click",()=>{
 
     const title = document.querySelector("#title");
@@ -29,12 +30,13 @@ submit.addEventListener("click",()=>{
     const pages = document.querySelector("#pages");
     const read = document.getElementsByName("read");
     let bookRead;
-
+    
     let book = Object.create(Book);
 
     book.title=title.value;
     book.author=author.value;
     book.pages=Number.parseInt(pages.value);
+    book.isDisplayed=false;
 
     for (let i=0;i<read.length;i++){
 
@@ -48,14 +50,17 @@ submit.addEventListener("click",()=>{
 
 
     if (!title.value || !author.value|| !pages.value) {
+
         alert("Please enter book information");
         return;
     }
     
 
     myLibrary.push(book);
-    createBookCard(book);
+    book.index=myLibrary.indexOf(book);
+    createLibrary(myLibrary);
     
+    console.log(myLibrary)
     bookform.classList.add("book-form");
     bookform.classList.remove("book-form-popup");
 
@@ -67,7 +72,12 @@ submit.addEventListener("click",()=>{
 
 /*Function that dynamically creates a card on the page with the properties of the book
 object that is passed to it displayed on the card*/
-function createBookCard(book) {
+function createLibrary(arr) {
+
+for (let i=0; i<=arr.length-1;i++) {
+
+
+    if(arr[i].isDisplayed==false) {
 
     const card = document.createElement("div");
     const title= document.createElement("p");
@@ -77,11 +87,12 @@ function createBookCard(book) {
     const remove = document.createElement("button");
 
     
-    title.textContent=book.title;
-    author.textContent=book.author;
-    pages.textContent=book.pages;
+    title.textContent=arr[i].title;
+    author.textContent=arr[i].author;
+    pages.textContent=arr[i].pages;
+    
 
-    if (book.isRead == true) {
+    if (arr[i].isRead == true) {
 
     isRead.textContent="Read";
     card.classList.add("card-read");
@@ -101,45 +112,51 @@ function createBookCard(book) {
     card.appendChild(pages);
     card.appendChild(isRead);
     card.appendChild(remove);
+    
+    
 
     //Event Listener that allows user to toggle whether a book has been read or not
     isRead.addEventListener("click", ()=>{
-        if (book.isRead==true) {
+        if (arr[i].isRead==true) {
             isRead.textContent="Read";
             card.classList.remove("card-read");
             card.classList.add("card-notread");
-            book.isRead=false
+            arr[i].isRead=false
         }
         else {
             isRead.textContent="Not Read";
             card.classList.remove("card-notread");
             card.classList.add("card-read");
-            book.isRead=true;
+            arr[i].isRead=true;
         }
     })
 
     //Event Listener that removes book card from the webpage and from myLibrary array
-    remove.addEventListener("click", function (book){
+    remove.addEventListener("click", ()=>{
 
-        myLibrary.splice(book.getBookIndex,1);
+        myLibrary.splice(arr[i].index,1);
         console.log(myLibrary);
         library.removeChild(card);
     })
 
 }
+arr[i].isDisplayed=true;
+
+}
+
+}
 
 
 //Book Object Constructor
-function Book(title,author,pages,isRead) {      
+function Book(title,author,pages,isRead,isDisplayed,index) {      
 
     this.title=title;
     this.author-author;
     this.pages=pages;
     this.isRead=isRead;
+    this.isDisplayed=isDisplayed;
+    this.index=index;
     
-    this.getBookIndex= function() {
-
-        return myLibrary.indexOf(this);
-    };
+  
 
 };
