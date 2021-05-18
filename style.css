@@ -2,8 +2,22 @@ html {
     background: #121212;
 }
 
+.conatiner {
+    display:inline-block;
+
+}
+
+.library {
+    border: 3px solid black;
+    z-index: 1;
+    margin-top: 160px;
+    height: 800px;
+    width: 100%;
+    
+}
 
 .title {
+    display:block;
     font-size: 70px;
     text-align: center;
     color: white;
@@ -11,14 +25,51 @@ html {
 }
 
 .btns {
-    height: 200px;
+    display:inline-block;
+    position:fixed;
+    height: 130px;
+    width: 100%;
+    border: 1px solid yellow;
+    background: #222121b4
 
 }
 
 #add {
-    display: block;
+    
+    display: inline-block;
+    position: fixed;
     margin-left:45%;
-    margin-top:200px;
+    margin-top: 10px;
+    height:80px;
+    width:100px;
+    font-size:20px;
+    background-color: aqua;
+    border:1px solid black;
+    box-shadow: 2px 2px black;
+    border-radius: 2em;
+}
+
+#local{
+
+    display: inline-block;
+    position: fixed;
+    margin-left:45%;
+    margin-top: 10px;
+    height:100px;
+    width:170px;
+    font-size:30px;
+    background-color:blue;
+    border:1px solid black;
+    box-shadow: 2px 2px black;
+    border-radius: 3em;
+}
+
+#cloud {
+
+    display: block;
+    position: fixed;
+    margin-left:45%;
+    margin-top: 10px;
     height:100px;
     width:170px;
     font-size:30px;
@@ -27,6 +78,9 @@ html {
     box-shadow: 2px 2px black;
     border-radius: 3em;
 }
+
+
+
 
 .book-form {
     display: none;
@@ -56,12 +110,7 @@ label {
     font-size: 18px;
 }
 
-.library {
-    z-index: 1;
-    height: 300px;
-    width: 100%;
-    
-}
+
 
 .card-read {
 
