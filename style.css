@@ -2,15 +2,10 @@ html {
     background: #121212;
 }
 
-.conatiner {
-    display:inline-block;
 
-}
 
 .library {
-    border: 3px solid black;
     z-index: 1;
-    margin-top: 160px;
     height: 800px;
     width: 100%;
     
@@ -26,57 +21,50 @@ html {
 
 .btns {
     display:inline-block;
-    position:fixed;
     height: 130px;
     width: 100%;
-    border: 1px solid yellow;
+    border: 1px solid white;
     background: #222121b4
 
 }
 
 #add {
-    
-    display: inline-block;
-    position: fixed;
-    margin-left:45%;
-    margin-top: 10px;
+    position: absolute;
+    margin-left: 900px;
+    margin-top: 15px;
     height:80px;
     width:100px;
     font-size:20px;
     background-color: aqua;
     border:1px solid black;
-    box-shadow: 2px 2px black;
+    box-shadow: 3px 3px black;
     border-radius: 2em;
 }
 
 #local{
-
-    display: inline-block;
-    position: fixed;
-    margin-left:45%;
-    margin-top: 10px;
-    height:100px;
-    width:170px;
-    font-size:30px;
-    background-color:blue;
+    position:absolute;
+    margin-left: 700px;
+    margin-top: 15px;
+    height:80px;
+    width:100px;
+    font-size:20px;
+    background-color: aqua;
     border:1px solid black;
-    box-shadow: 2px 2px black;
-    border-radius: 3em;
+    box-shadow: 3px 3px black;
+    border-radius: 2em;
 }
 
 #cloud {
-
-    display: block;
-    position: fixed;
-    margin-left:45%;
-    margin-top: 10px;
-    height:100px;
-    width:170px;
-    font-size:30px;
+    position:absolute;
+    margin-left: 1100px;
+    margin-top: 15px;
+    height:80px;
+    width:100px;
+    font-size:20px;
     background-color: aqua;
     border:1px solid black;
-    box-shadow: 2px 2px black;
-    border-radius: 3em;
+    box-shadow: 3px 3px black;
+    border-radius: 2em;
 }
 
 
@@ -87,12 +75,13 @@ html {
 }
 
 .book-form-popup {
-    position: absolute;
+    position: fixed;
     text-align: center;
     box-shadow: 10px 11px rgba(0, 0, 255, .2);
     height: 250px;
     width: 400px;
-    margin-left:350px;
+    margin-left: 750px;
+    margin-top: 80px;
     border-radius: 5px;
     text-align: center;
     font-size:20px;
@@ -104,13 +93,19 @@ html {
     margin: 3px;
     font-size: 20px;
 }
+
 label {
     display:inline-block;
     margin: 3px;
     font-size: 18px;
 }
 
+.card-text {
+    font-size:16px;
+    text-shadow: 1px 1px black;
 
+
+}
 
 .card-read {
 
@@ -118,31 +113,26 @@ label {
     z-index: 1;
     color:white;
     margin:10px;
-    height: fit-content;
-    max-height: 200px;
-    width: fit-content;
-    max-width: 200px;
+    height: 150px;
+    width: 100px;
     border: 2px solid black;
     box-shadow: 2px 1px white;
     border-radius: 3px;
     text-align: center;
-    font-size:16px;
     background:green;
 }
+
 .card-notread {
     display:inline-block;
     z-index: 1;
     color:white;
     margin:10px;
-    height: fit-content;
-    max-height: 200px;
-    width: fit-content;
-    max-width: 200px;
+    height:150px;
+    width: 100px;
     border: 2px solid black;
     box-shadow: 2px 1px white;
     border-radius: 3px;
     text-align: center;
-    font-size:16px;
     background:red;
 }
 

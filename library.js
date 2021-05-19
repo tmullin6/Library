@@ -83,10 +83,14 @@ for (let i=0; i<=arr.length-1;i++) {
     const title= document.createElement("p");
     const author= document.createElement("p");
     const pages= document.createElement("p");
-    const isRead= document.createElement("button");
+    const read= document.createElement("button");
     const remove = document.createElement("button");
 
     
+    title.classList.add("card-text");
+    author.classList.add("card-text");
+    pages.classList.add("card-text");
+
     title.textContent=arr[i].title;
     author.textContent=arr[i].author;
     pages.textContent=arr[i].pages;
@@ -94,37 +98,38 @@ for (let i=0; i<=arr.length-1;i++) {
 
     if (arr[i].isRead == true) {
 
-    isRead.textContent="Read";
+    read.textContent="Read";
     card.classList.add("card-read");
 
     }
 
     else{
-        isRead.textContent ="Not Read";
+        read.textContent ="Not Read";
         card.classList.add("card-notread");
     }
 
-    remove.textContent="Remove Book";
+    remove.setAttribute("style","display:inline-block; background-color:white; width:fit-content");
+    remove.textContent="Remove";
 
     library.appendChild(card);
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(pages);
-    card.appendChild(isRead);
+    card.appendChild(read);
     card.appendChild(remove);
     
     
 
     //Event Listener that allows user to toggle whether a book has been read or not
-    isRead.addEventListener("click", ()=>{
+    read.addEventListener("click", ()=>{
         if (arr[i].isRead==true) {
-            isRead.textContent="Read";
+            read.textContent="Not Read";
             card.classList.remove("card-read");
             card.classList.add("card-notread");
             arr[i].isRead=false
         }
         else {
-            isRead.textContent="Not Read";
+            read.textContent="Read";
             card.classList.remove("card-notread");
             card.classList.add("card-read");
             arr[i].isRead=true;
@@ -133,10 +138,16 @@ for (let i=0; i<=arr.length-1;i++) {
 
     //Event Listener that removes book card from the webpage and from myLibrary array
     remove.addEventListener("click", ()=>{
-
+        if (myLibrary.length ==1) {
+        myLibrary.pop()
+        library.removeChild(card);
+        }
+        else {
         myLibrary.splice(arr[i].index,1);
         console.log(myLibrary);
         library.removeChild(card);
+        }
+        
     })
 
 }
