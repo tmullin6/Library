@@ -1,4 +1,4 @@
-let myLibrary =[];          //Initialize empty array to hold book objects for library
+let myLibrary =[];                  //Initialize empty array to hold book objects for library
 
 
 //Define Global Query Selector Constants
@@ -9,6 +9,7 @@ const submit = document.querySelector("#submit");
 const reset=document.querySelector("#reset");
 
 
+
 //Event Listener for the "Add New Book" button that displays the input form for the user to add book info
 add.addEventListener("click",()=>{
     
@@ -16,6 +17,9 @@ add.addEventListener("click",()=>{
     bookform.classList.remove("book-form");
 
 });
+
+
+
 
 
 /*Event Listener for book form submit button. Takes the information input by user into the form
@@ -59,8 +63,8 @@ submit.addEventListener("click",()=>{
     myLibrary.push(book);
     book.index=myLibrary.indexOf(book);
     createLibrary(myLibrary);
+
     
-    console.log(myLibrary)
     bookform.classList.add("book-form");
     bookform.classList.remove("book-form-popup");
 
@@ -156,6 +160,7 @@ arr[i].isDisplayed=true;
 }
 
 }
+
 
 
 //Book Object Constructor
