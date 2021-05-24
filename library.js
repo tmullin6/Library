@@ -6,10 +6,25 @@ const library = document.querySelector(".library");
 const add = document.querySelector("#add");
 const bookform = document.querySelector(".book-form");
 const submit = document.querySelector("#submit");
-const reset=document.querySelector("#reset");
+const saveLibrary = document.querySelector("#local-store");
+const clearStorage = document.querySelector("#clear-local");
 
 
+window.onload = ()=>{
 
+if (localStorage.length > 0){
+
+    myLibrary=JSON.parse(localStorage.getItem("books"));
+    myLibrary.forEach(book=>book.isDisplayed=false);
+    console.log(myLibrary);
+    createLibrary(myLibrary);
+}
+
+else {
+    return;
+}
+
+}
 //Event Listener for the "Add New Book" button that displays the input form for the user to add book info
 add.addEventListener("click",()=>{
     
@@ -98,6 +113,8 @@ for (let i=0; i<=arr.length-1;i++) {
     title.textContent=arr[i].title;
     author.textContent=arr[i].author;
     pages.textContent=arr[i].pages;
+
+    pages.setAttribute("style","margin-bottom: 30px;");
     
 
     if (arr[i].isRead == true) {
@@ -160,6 +177,33 @@ arr[i].isDisplayed=true;
 }
 
 }
+
+
+saveLibrary.addEventListener("click",()=>{
+
+    let save = confirm("Would you like to overwrite your existing library with this one?");
+
+    if (save === true) {
+    localStorage.clear();
+    localStorage.setItem("books",JSON.stringify(myLibrary));
+    console.log(localStorage);
+    }
+    else {
+        return;
+    }
+})
+
+clearStorage.addEventListener("click", ()=>{
+
+    let clear = confirm("Are you sure you want to clear your library?");
+   
+
+    if (clear ===true) {
+        localStorage.clear();
+        alert("Your saved library has been deleted from memory");
+    }
+
+});
 
 
 

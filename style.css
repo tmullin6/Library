@@ -41,6 +41,37 @@ html {
     border-radius: 2em;
 }
 
+#local-store {
+
+    position: absolute;
+    margin-left: 30vw;
+    margin-top: 15px;
+    height:80px;
+    width:100px;
+    font-size:20px;
+    color: white;
+    background-color: green;
+    border:1px solid black;
+    box-shadow: 3px 3px black;
+    border-radius: 2em;
+}
+
+
+#clear-local {
+
+    position: absolute;
+    margin-left: 60vw;
+    margin-top: 15px;
+    height:80px;
+    width:100px;
+    font-size:18px;
+    color: white;
+    background-color: red;
+    border:1px solid black;
+    box-shadow: 3px 3px black;
+    border-radius: 2em;
+}
+
 
 
 
