@@ -1,3 +1,17 @@
+//Book Class Constructor
+class Book {
+    
+    constructor (title,author,pages,isRead,isDisplayed,index){
+        this.title=title;
+        this.author-author;
+        this.pages=pages;
+        this.isRead=isRead;
+        this.isDisplayed=isDisplayed;
+        this.index=index;
+    }
+    
+};
+
 let myLibrary =[];                  //Initialize empty array to hold book objects for library
 
 
@@ -50,7 +64,7 @@ submit.addEventListener("click",()=>{
     const read = document.getElementsByName("read");
     let bookRead;
     
-    let book = Object.create(Book);
+    let book = new Book;
 
     book.title=title.value;
     book.author=author.value;
@@ -207,16 +221,4 @@ clearStorage.addEventListener("click", ()=>{
 
 
 
-//Book Object Constructor
-function Book(title,author,pages,isRead,isDisplayed,index) {      
 
-    this.title=title;
-    this.author-author;
-    this.pages=pages;
-    this.isRead=isRead;
-    this.isDisplayed=isDisplayed;
-    this.index=index;
-    
-  
-
-};
